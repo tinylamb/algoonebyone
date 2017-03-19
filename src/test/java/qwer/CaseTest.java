@@ -3,12 +3,13 @@ package qwer;
 import java.util.ArrayList;
 import java.util.List;
 
+import basic.Counter;
+
 public class CaseTest {
 
 	public static void main(String[] args) {
-		System.out.println("hello");
-//		testBinarySearch();
-		testBS2();
+        testCounter();
+
 	}
 	
 	public static void testBinarySearch() {
@@ -16,6 +17,13 @@ public class CaseTest {
 		int[] arr = {1, 4, 6, 9, 11, 102, 111, 222, 333};
 		System.out.println( Test.binarySearch(v, arr));
 	}
+
+	public static void testCounter() {
+        Counter heads = new Counter("heads");
+        Counter tails = new Counter("tails");
+        heads.increCnt();
+        System.out.println(heads.toString());
+    }
 	
 	public static void testBS() {
 		Double t1 = -1d;
