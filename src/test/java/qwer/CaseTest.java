@@ -3,12 +3,13 @@ package qwer;
 import java.util.ArrayList;
 import java.util.List;
 
+import basic.BasicLearn;
 import basic.Counter;
 
 public class CaseTest {
 
 	public static void main(String[] args) {
-        testCounter();
+        testStaticInnerClass();
 
 	}
 	
@@ -23,6 +24,11 @@ public class CaseTest {
         Counter tails = new Counter("tails");
         heads.increCnt();
         System.out.println(heads.toString());
+    }
+
+    public static void testStaticInnerClass() {
+        BasicLearn.Circle cir = new BasicLearn.Circle(1);
+        System.out.println(cir.getArea());
     }
 	
 	public static void testBS() {
