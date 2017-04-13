@@ -2,6 +2,8 @@ package basic;
 
 import java.util.Scanner;
 
+import com.google.common.collect.HashMultimap;
+
 /**
  * Created by samo on 2017/4/2.
  *
@@ -33,6 +35,7 @@ public class ComputeArea {
     }
 
     public static void main(String[] args) {
+        HashMultimap.create();
         String r = args[0];
         Scanner input = new Scanner(System.in);
         System.out.println("input r : ");
