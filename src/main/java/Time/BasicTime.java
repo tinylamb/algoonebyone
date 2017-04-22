@@ -32,6 +32,11 @@ public class BasicTime {
         ls.add("2017-04-15 10:27:21");
         ls.add("2017-04-15 09:29:27");
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        //sdf.setTimeZone(TimeZone.getTimeZone("GMT"));
+        //sdf.setTimeZone(TimeZone.getTimeZone("UTC"));
+        System.out.println( sdf.getTimeZone() );
+        Date zero =  new Date(0);
+        System.out.println("zero Date : " + sdf.format(zero));
         Date initT = BasicTimeService.transStringToDate(ls.get(0), sdf);
         if(initT == null) {
             System.out.println(ls.get(0));

@@ -9,5 +9,7 @@ package basic;
 public class Samo extends People {
 
     @Override
-    public void sayHi() { }
+    public void sayHi() {
+        System.out.println("hi");
+    }
 }
