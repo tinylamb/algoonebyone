@@ -1,5 +1,8 @@
 package basic;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * Created by samo on 2017/4/3.
  *
@@ -27,6 +30,11 @@ public class BasicLearn {
         }
 
         public void test() {
+            List<String> ls = new ArrayList<String>();
+            ls.add(3,"str");
+            for (String tmp : ls) {
+                System.out.println(tmp);
+            }
             //String endcodeSer = opSearch.doSearch(endcodeQuery);
             //String encodeVal = OnlineLgtService.parseSearch(endcodeSer, OP_SEARCH_FIELD_ENDCODE);
             //if(StringUtil.isEmpty(encodeVal)) {
