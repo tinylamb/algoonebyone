@@ -7,6 +7,9 @@ package challenges.array_string;
  * @date 2017/04/25
  */
 
+import java.util.HashMap;
+import java.util.Map;
+
 /**
  * Implement a hash table with set, get, and remove methods
  */
@@ -129,6 +132,12 @@ public class HashTable {
         } else {
             System.out.println("not String");
         }
+
+    }
+
+    public static void testMap() {
+        Map<String, String> map = new HashMap<>();
+        map.put("语文", "yuwen");
 
     }
 
