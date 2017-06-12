@@ -24,6 +24,8 @@ public class JncWine extends Wine {
     public static void main(String[] args) {
         Wine w = new JncWine();
         w.func1();
+        //w.func1("test"); 不可以
+
 
         System.out.println("############");
 
