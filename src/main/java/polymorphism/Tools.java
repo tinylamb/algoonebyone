@@ -28,6 +28,6 @@ public class Tools {
     //Exception in thread "main" java.lang.StackOverflowError
     //at polymorphism.Tools.<init>
     //refer: https://stackoverflow.com/questions/42994581/exception-in-thread-main-java-lang-stackoverflowerror-why
-    private Tools instance2 = new Tools();
+    //private Tools instance2 = new Tools();
 
 }

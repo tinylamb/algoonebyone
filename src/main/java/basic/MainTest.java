@@ -1,5 +1,6 @@
 package basic;
 
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -30,7 +31,13 @@ public class MainTest {
         ((Samo) obj).sayHi();
     }
 
+    public static void testDouble() {
+        Double d = 0.123;
+        String v = new DecimalFormat("0.00000000").format(d);
+        System.out.println(v);
+    }
+
     public static void main(String[] args) {
-        testLs();
+        testDouble();
     }
 }
