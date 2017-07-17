@@ -16,7 +16,7 @@ import java.util.List;
 public class BasicTime {
 
     public static void main(String[] args) {
-        testTimeInterval();
+        testcurrentTime();
     }
 
     public static void addElem(final List<String> l) {
@@ -96,5 +96,16 @@ public class BasicTime {
         System.out.println(h);
         int dmin = (int)((a - h) * 60);
         System.out.println(dmin);
+    }
+
+    public static void testcurrentTime() {
+        SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm");
+        String now = df.format(new Date());
+        if (now.compareTo("2017-07-17 21:40") > 0) {
+            System.out.println(">");
+        } else {
+            System.out.println("<");
+        }
+        System.out.println(now);
     }
 }
