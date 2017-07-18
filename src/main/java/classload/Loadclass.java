@@ -58,5 +58,6 @@ public class Loadclass {
 
     public static void refer() {
         String r1 = "http://www.cnblogs.com/pixy/p/4798089.html";
+        String r2 = "http://www.cnblogs.com/yejg1212/p/3270152.html";
     }
 }
