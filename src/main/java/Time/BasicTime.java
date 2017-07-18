@@ -101,10 +101,10 @@ public class BasicTime {
     public static void testcurrentTime() {
         SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm");
         String now = df.format(new Date());
-        if (now.compareTo("2017-07-17 21:40") > 0) {
-            System.out.println(">");
+        if (now.compareTo("2017-08-17 18:40") < 0) {
+            System.out.println("no ");
         } else {
-            System.out.println("<");
+            System.out.println(">");
         }
         System.out.println(now);
     }
