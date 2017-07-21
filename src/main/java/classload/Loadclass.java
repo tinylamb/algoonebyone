@@ -3,6 +3,7 @@ package classload;
 import java.io.BufferedReader;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.net.URL;
 
 /**
  * Created by samo on 2017/7/18.
@@ -12,12 +13,27 @@ import java.io.InputStreamReader;
  */
 public class Loadclass {
     public static void main(String[] args) throws Exception{
-        testreadclassLoader();
+        testAppClassloader();
     }
 
     public static void testgetResource() {
         System.out.println(Loadclass.class.getResource(""));
         System.out.println(Loadclass.class.getResource("/"));
+    }
+
+    public static void testBootstrapClassloader() {
+        URL[] urls = sun.misc.Launcher.getBootstrapClassPath().getURLs();
+        for (int i = 0; i < urls.length; i++) {
+            System.out.println(urls[i].toExternalForm());
+        }
+    }
+
+    public static void testExtClassloader() {
+        System.out.println(System.getProperty("java.ext.dirs"));
+    }
+
+    public static void testAppClassloader() {
+        System.out.println(System.getProperty("java.class.path"));
     }
 
 
@@ -59,6 +75,7 @@ public class Loadclass {
     public static void refer() {
         String r1 = "http://www.cnblogs.com/pixy/p/4798089.html";
         String r2 = "http://www.cnblogs.com/yejg1212/p/3270152.html";
+        String r3 = "http://ifeve.com/classloader%E8%A7%A3%E6%83%91/";
     }
 
     public static void conclu() {
