@@ -99,7 +99,7 @@ public class BasicTime {
     }
 
     public static void testcurrentTime() {
-        SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm");
+        SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         String now = df.format(new Date());
         if (now.compareTo("2017-08-17 18:40") < 0) {
             System.out.println("no ");

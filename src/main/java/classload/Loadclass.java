@@ -60,4 +60,19 @@ public class Loadclass {
         String r1 = "http://www.cnblogs.com/pixy/p/4798089.html";
         String r2 = "http://www.cnblogs.com/yejg1212/p/3270152.html";
     }
+
+    public static void conclu() {
+        ;
+        /**
+         * getResources方法不支持操作系统的绝对路径。资源寻找都是基于某个绝对地址开始相对的查找
+         * 资源查找是双亲委派的查找过程
+         * BootstrapClassLoader的查找路径来自系统的java.class.path属性
+         * ExtClassLoader来自java.ext.dirs
+         * AppClassLoader来自java.class.path
+         * getClass().getClassLoader().getResource("data/resource.xml")从classpath遍历
+         * getClass().getClassLoader().getResource("/data/resource.xml")此路不通
+         * getClass().getResource("data/resource.xml")是以当前类为基准做相对路径查找
+         * getClass().getResource("/data/resource.xml")功能等同于第上上上条。
+         */
+    }
 }
