@@ -1,5 +1,6 @@
 package thread;
 
+import java.lang.reflect.Method;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
@@ -39,10 +40,38 @@ public class BasicThread extends Thread {
         }
     }
 
-    public static void main(String[] args) {
+    public static void testrun() {
         BasicThread t = new BasicThread();
         t.start();
         t.run(1); //faild if Thread t = new BasicThread()
+    }
+
+    private static void testgetDeclaredMethods() {
+        System.out.println("getDeclaredMethods");
+    }
+
+    public static void testreflect() {
+        ClassLoader loader = thread.BasicThread.class.getClassLoader();
+        try {
+            Class cl = loader.loadClass("thread.BasicThread");
+            Object ob = cl.newInstance();
+            Method[] ms = cl.getDeclaredMethods();
+            for (Method m : ms) {
+                System.out.println(m.toString());
+            }
+            Method run1 = cl.getDeclaredMethod("run", int.class);
+            run1.invoke(ob, 1);
+
+            Method run2 = cl.getDeclaredMethod("run");
+            run2.invoke(cl.newInstance());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static void main(String[] args) {
+        testreflect();
+
 
         //Thread t = new Thread() {
         //    @Override
