@@ -52,8 +52,9 @@ public class BasicThread extends Thread {
 
     public static void testreflect() {
         ClassLoader loader = thread.BasicThread.class.getClassLoader();
+        ClassLoader loader1 = Thread.currentThread().getContextClassLoader();
         try {
-            Class cl = loader.loadClass("thread.BasicThread");
+            Class cl = loader1.loadClass("thread.BasicThread");
             Object ob = cl.newInstance();
             Method[] ms = cl.getDeclaredMethods();
             for (Method m : ms) {
