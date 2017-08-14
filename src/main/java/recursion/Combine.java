@@ -49,12 +49,19 @@ public class Combine {
         System.out.println(ls.size());
 
         for (String[] tmp : ls ) {
-            printStrarr(tmp);
+            printArr(tmp);
         }
     }
 
     public static void printStrarr(String[] arr) {
         for (String tmp : arr) {
+            System.out.print(tmp + " ");
+        }
+        System.out.println();
+    }
+
+    public static <T> void printArr(T[] arr) {
+        for (T tmp : arr) {
             System.out.print(tmp + " ");
         }
         System.out.println();
