@@ -12,12 +12,9 @@ import java.util.List;
  */
 public class Combine {
     public static void main(String[] args) {
-        List<String> ls = Arrays.asList(new String[]{"a", "b", "c", "d", "e"});
-        System.out.println(ls.subList(0, ls.size() - 1));
-        List<String> com = new ArrayList<String>();
-        com = combineElems(ls, 2);
-        System.out.println(com);
-    }
+        //testcomb1();
+        testcomb2();
+   }
 
     public static List<String> combineElems(List<String> ls, int k) {
         if (ls.size() == k) {
@@ -35,6 +32,53 @@ public class Combine {
             //List<String> result = new ArrayList<String>();
             r1.addAll(r2);
             return r1;
+        }
+    }
+
+    public static void testcomb1() {
+        String[] arr = {"A","B","C","D","E","F"};
+        int k = 2;
+        combinations2(arr, k, 0, new String[k]);
+    }
+
+    public static void testcomb2() {
+        String[] arr = {"A","B","C","D","E","F"};
+        final List<String[]> ls = new ArrayList<String[]>();
+        final int k = 2;
+        combinations(arr, k, 0, new String[k], ls);
+        System.out.println(ls.size());
+
+        for (String[] tmp : ls ) {
+            printStrarr(tmp);
+        }
+    }
+
+    public static void printStrarr(String[] arr) {
+        for (String tmp : arr) {
+            System.out.print(tmp + " ");
+        }
+        System.out.println();
+    }
+
+    public static void combinations2(String[] arr, int len, int startPosition, String[] result){
+        if (len == 0){
+            System.out.println(Arrays.toString(result));
+            return;
+        }
+        for (int i = startPosition; i <= arr.length-len; i++){
+            result[result.length - len] = arr[i];
+            combinations2(arr, len-1, i+1, result);
+        }
+    }
+
+    public static void combinations(String[] arr, int len, int startPosition, String[] result, final List<String[]> comb){
+        if (len == 0){
+            comb.add(result.clone());
+            return;
+        }
+        for (int i = startPosition; i <= arr.length-len; i++){
+            result[result.length - len] = arr[i];
+            combinations(arr, len-1, i+1, result, comb);
         }
     }
 }
