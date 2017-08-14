@@ -14,7 +14,7 @@ public class Combine {
     public static void main(String[] args) {
         //testcomb1();
         testcomb2();
-   }
+    }
 
     public static List<String> combineElems(List<String> ls, int k) {
         if (ls.size() == k) {
