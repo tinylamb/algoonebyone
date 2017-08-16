@@ -28,6 +28,7 @@ package algsexcise;
 
 import java.io.File;
 import java.io.FileInputStream;
+import java.util.Random;
 
 import algs4.StdIn;
 import algs4.StdOut;
@@ -69,6 +70,23 @@ public class Sattolo {
     }
 
     /**
+     * Fisher–Yates shuffle
+     * @param arr
+     * @param <T>
+     */
+    public static <T> void shuffle(T[] arr) {
+        if (arr.length == 0) {
+            return;
+        }
+        for (int i = arr.length - 1; i > 0; i--) {
+            int rand = (new Random(System.currentTimeMillis())).nextInt(i + 1);
+            T tmp = arr[rand];
+            arr[rand] = arr[i];
+            arr[i] = tmp;
+        }
+    }
+
+    /**
      * Reads in a sequence of strings from standard input, shuffles
      * them, and prints out the results.
      *
@@ -86,13 +104,12 @@ public class Sattolo {
         // read in the data
         //String[] a = StdIn.readAllStrings();
         String[] a = StdIn.readFileAllStrings(f);
+        StdOut.printArr(a);
 
         // shuffle the array
-        Sattolo.cycle(a);
+        Sattolo.shuffle(a);
+        StdOut.printArr(a);
 
-        // print results.
-        for (int i = 0; i < a.length; i++)
-            StdOut.println(a[i]);
     }
 
     public static void outFile(File file) throws Exception {

@@ -1,6 +1,6 @@
 package qwer;
 
-import edu.princeton.cs.algs4.StdIn;
+import algs4.StdIn;
 
 /**
  * Created by samo on 2017/8/16.

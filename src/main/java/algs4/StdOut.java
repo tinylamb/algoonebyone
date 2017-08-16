@@ -106,6 +106,13 @@ public final class StdOut {
         out.println(x);
     }
 
+    public static <T> void printArr(T[] arr) {
+        for (T tmp : arr) {
+            System.out.print(tmp + " ");
+        }
+        System.out.println();
+    }
+
    /**
      * Prints a boolean to standard output and then terminates the line.
      *
