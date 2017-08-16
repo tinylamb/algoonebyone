@@ -73,6 +73,7 @@ public class Sattolo {
      * Fisher–Yates shuffle
      * @param arr
      * @param <T>
+     * https://cstheory.stackexchange.com/questions/189/algorithms-from-the-book?page=1&tab=votes#tab-top
      */
     public static <T> void shuffle(T[] arr) {
         if (arr.length == 0) {
