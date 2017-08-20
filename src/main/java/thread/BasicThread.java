@@ -71,7 +71,14 @@ public class BasicThread extends Thread {
     }
 
     public static void main(String[] args) {
-        testreflect();
+        Thread t = new Thread() {
+            @Override
+            public void run() {
+                System.out.println("hello thread");
+            }
+        };
+        t.start();
+        System.out.println("hello world");
 
 
         //Thread t = new Thread() {

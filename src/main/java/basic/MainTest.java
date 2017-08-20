@@ -14,6 +14,36 @@ import org.apache.commons.lang3.StringUtils;
  */
 public class MainTest {
 
+    public static String getVerionByPath(String file) {
+        if (file != null && file.length() > 0 && StringUtils.contains(file, ".jar")) {
+            int index = StringUtils.lastIndexOf(file, ".jar");
+            file = file.substring(0, index);
+            int i = file.lastIndexOf('/');
+            if (i >= 0) {
+                file = file.substring(i + 1);
+            }
+            i = file.indexOf("-");
+            if (i >= 0) {
+                file = file.substring(i + 1);
+            }
+            while (file.length() > 0 && !Character.isDigit(file.charAt(0))) {
+                i = file.indexOf("-");
+                if (i >= 0) {
+                    file = file.substring(i + 1);
+                } else {
+                    break;
+                }
+            }
+            return file;
+        } else {
+            return null;
+        }
+    }
+
+    public static void testgetVerionByPath() {
+        System.out.println(getVerionByPath("onlinerobotunknownissuemonitor-1.0-jar-with-dependencies.jar"));
+    }
+
     public static void testLs() {
         List<String> ls = new ArrayList<>();
         ls.add(3, "a");
@@ -31,6 +61,19 @@ public class MainTest {
         ((Samo) obj).sayHi();
     }
 
+    private static boolean checkVersionNecessary(String versionStr) {
+        return !(versionStr == null || StringUtils.contains(versionStr, "with-dependencies")
+            || StringUtils.contains(versionStr, "storm") || StringUtils.contains(versionStr, "odps"));
+    }
+
+    public static void testcheckVersionNecessary() {
+        if (checkVersionNecessary("1.0-jar-with-dependencies")) {
+            System.out.println("true");
+        } else {
+            System.out.println("false");
+        }
+    }
+
     public static void testDouble() {
         Double d = 0.123;
         String v = new DecimalFormat("0.00000000").format(d);
@@ -38,6 +81,6 @@ public class MainTest {
     }
 
     public static void main(String[] args) {
-        testDouble();
+        testgetVerionByPath();
     }
 }
