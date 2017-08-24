@@ -58,7 +58,7 @@ public class NgramDict {
     }
 
     public void updatengram() {
-        ScheduledThreadPoolExecutor exec = new ScheduledThreadPoolExecutor(2);
+        ScheduledThreadPoolExecutor exec = new ScheduledThreadPoolExecutor(1);
         exec.scheduleAtFixedRate(
             new Runnable() {
                 public void run() {
