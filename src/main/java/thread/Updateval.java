@@ -35,7 +35,7 @@ public class Updateval {
         t.start();
     }
 
-    public static void main(String[] args) {
+    public static void testupdatedict() {
         updateDict();
         int i = 0;
         while (i < 1000) {
@@ -43,5 +43,9 @@ public class Updateval {
             //System.out.println(i + " " + val.size()  + " " + val);
             i++;
         }
+    }
+
+    public static void main(String[] args) {
+        dict.updatengram();
     }
 }

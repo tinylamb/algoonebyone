@@ -1,7 +1,11 @@
 package thread;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.concurrent.ScheduledThreadPoolExecutor;
+import java.util.concurrent.TimeUnit;
 
 /**
  * Created by samo on 2017/8/20.
@@ -16,6 +20,7 @@ public class NgramDict {
      * If you are populating an entirely new HashMap then assigning it to the existing variable, then you use volatile
      */
     private volatile Map<String, String> freqWords;
+    private SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
     //private Map<String, String> freqWords;
 
     public NgramDict() {
@@ -50,5 +55,17 @@ public class NgramDict {
 
     public int getSize() {
         return freqWords.size();
+    }
+
+    public void updatengram() {
+        ScheduledThreadPoolExecutor exec = new ScheduledThreadPoolExecutor(2);
+        exec.scheduleAtFixedRate(
+            new Runnable() {
+                public void run() {
+                    //System.out.println(System.currentTimeMillis() + " " + "update");
+                    System.out.println(sdf.format(new Date()));
+                }
+            },1, 5, TimeUnit.SECONDS
+        );
     }
 }
