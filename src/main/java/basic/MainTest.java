@@ -80,6 +80,10 @@ public class MainTest {
         System.out.println(v);
     }
 
+    public static void testInteger() {
+        Integer i = 1;
+    }
+
     public static void main(String[] args) {
         testgetVerionByPath();
     }
