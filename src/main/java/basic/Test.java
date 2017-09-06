@@ -40,6 +40,10 @@ public class Test {
     }
 
     public static void main(String[] args) {
-        testgetVerionByPath();
+        //testgetVerionByPath();
+        String input = "我是先也说的清楚,超了退货日期,你是你不能退了,我也不往过寄了,你说的能给处理,又不处理。什么玩意。";
+        for (int i = 0; i < input.length(); i++) {
+            System.out.println(input.length() + " : " + i + " : "+ input.substring(0, i));
+        }
     }
 }
