@@ -84,7 +84,24 @@ public class MainTest {
         Integer i = 1;
     }
 
+    public static void testSplit() {
+        String s = "a|b";
+        String[] l1 = s.split("|");
+        String[] l2 = StringUtils.split(s, "|");
+        printArr(l1);
+        printArr(l2);
+    }
+
+    public static <T> void printArr(T[] arr) {
+        for (T tmp : arr) {
+            System.out.print(tmp + "*");
+        }
+        System.out.println();
+    }
+
+
+
     public static void main(String[] args) {
-        testgetVerionByPath();
+        testSplit();
     }
 }
