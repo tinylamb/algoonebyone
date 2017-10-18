@@ -94,14 +94,41 @@ public class MainTest {
 
     public static <T> void printArr(T[] arr) {
         for (T tmp : arr) {
-            System.out.print(tmp + "*");
+            System.out.print(tmp + " ");
         }
         System.out.println();
+    }
+
+    public static void testInteger(Integer i) {
+        i = 3;
+    }
+
+    public static void combinations(String[] arr, int len, int startPosition, String[] result, final List<String[]> comb){
+        if (len == 0){
+            comb.add(result.clone());
+            return;
+        }
+        for (int i = startPosition; i <= arr.length-len; i++){
+            result[result.length - len] = arr[i];
+            combinations(arr, len-1, i+1, result, comb);
+        }
+    }
+
+    public static void testcombine() {
+        String[] initwords = {"今天", "是", "个", "好日子"};
+        final List<String[]> group3 = new ArrayList<String[]>();
+        final int k3 = 3;
+        combinations(initwords, k3, 0, new String[k3], group3);
+        for (String[] tmp : group3) {
+            printArr(tmp);
+        }
     }
 
 
 
     public static void main(String[] args) {
-        testSplit();
+        if ("showtypevalue卢林春".contains("showtypevalue")) {
+            System.out.println("yes");
+        }
     }
 }
