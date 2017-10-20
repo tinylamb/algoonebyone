@@ -1,4 +1,4 @@
-package hannlp;
+package nlp;
 
 import java.util.List;
 

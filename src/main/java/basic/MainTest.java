@@ -127,7 +127,11 @@ public class MainTest {
 
 
     public static void main(String[] args) {
-        if ("showtypevalue卢林春".contains("showtypevalue")) {
+        String query = "我没电脑要不要为这个投诉买台电脑傻B";
+        System.out.println(query);
+        if (query.contains("傻b")
+            || query.contains("傻b".toUpperCase())
+            ) {
             System.out.println("yes");
         }
     }

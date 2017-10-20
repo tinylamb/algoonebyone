@@ -1,4 +1,4 @@
-package hannlp;
+package nlp;
 
 /**
  * Created by samo on 2017/7/4.
