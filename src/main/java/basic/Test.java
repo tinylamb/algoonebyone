@@ -1,5 +1,8 @@
 package basic;
 
+import java.util.HashSet;
+import java.util.Set;
+
 import org.apache.commons.lang3.StringUtils;
 
 /**
@@ -39,11 +42,29 @@ public class Test {
         }
     }
 
+    public static void StringIntersection() {
+        String s1 = "流信息";
+        String s2 = "物";
+        Set<Character> h1 = new HashSet<Character>();
+        Set<Character> h2 = new HashSet<Character>();
+        for(int i = 0; i < s1.length(); i++) {
+            h1.add(s1.charAt(i));
+        }
+        for(int i = 0; i < s2.length(); i++) {
+            h2.add(s2.charAt(i));
+        }
+        h1.retainAll(h2);
+        for (Character c : h1) {
+            System.out.println(c);
+        }
+    }
+
+    public static void testStringIntersection() {
+        StringIntersection();
+    }
+
     public static void main(String[] args) {
         //testgetVerionByPath();
-        String input = "我是先也说的清楚,超了退货日期,你是你不能退了,我也不往过寄了,你说的能给处理,又不处理。什么玩意。";
-        for (int i = 0; i < input.length(); i++) {
-            System.out.println(input.length() + " : " + i + " : "+ input.substring(0, i));
-        }
+        testStringIntersection();
     }
 }
