@@ -2,6 +2,7 @@ package basic;
 
 import java.util.HashSet;
 import java.util.Set;
+import java.util.regex.Pattern;
 
 import org.apache.commons.lang3.StringUtils;
 
@@ -63,8 +64,48 @@ public class Test {
         StringIntersection();
     }
 
+    public static void testStringCompare() {
+        String s1 = "123";
+        String s2 = "120";
+        System.out.println(s1.compareTo(s2));
+    }
+
+    public static void testStringsplit() {
+        String s1 = "%你好%微信%";
+        String query = "你好请帮我看下是不是微信的问题";
+        String[] arr = StringUtils.split(s1, "%");
+        System.out.println("len : " + arr.length);
+        printArr(arr);
+        if (wordsInQuery(arr, query)) {
+            System.out.println(s1 + " in " + query);
+        } else {
+            System.out.println(s1 + " not in " + query);
+        }
+    }
+
+    public static <T> void printArr(T[] arr) {
+        for (T tmp : arr) {
+            System.out.print(tmp + " ");
+        }
+        System.out.println();
+    }
+
+    public static boolean wordsInQuery(final String[] words, final String query) {
+        if (words.length == 0) {
+            return false;
+        }
+        final String any = ".*";
+        StringBuilder sb = new StringBuilder();
+        sb.append(any);
+        for (String tmp : words) {
+            sb.append(tmp).append(any);
+        }
+        String pattern = sb.toString();
+        return Pattern.matches(pattern, query);
+    }
+
     public static void main(String[] args) {
         //testgetVerionByPath();
-        testStringIntersection();
+        testStringsplit();
     }
 }
