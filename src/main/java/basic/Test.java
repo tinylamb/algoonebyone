@@ -229,11 +229,25 @@ public class Test {
     }
 
     public static void testSpilt2() {
-        String s = "|||你好的哦";
-        String[] arr = StringUtils.split(s, "|");
+        String s = "天气真好|||是的|呢";
+        String[] arr = StringUtils.split(s, "|||");
         System.out.println(arr.length);
         printArr(arr);
 
+        String[] arr1 = StringUtils.splitByWholeSeparator(s, "|||");
+        System.out.println(arr1.length);
+        printArr(arr1);
+    }
+
+    public static void testSubList() {
+        List<String> ls = new ArrayList<>();
+        ls.add("1");
+        ls.add("2");
+        ls.add("3");
+        ls.add("4");
+
+        int max = (ls.size() > 3) ? 3 : ls.size();
+        System.out.println(ls.subList(0,max));
     }
 
     public static void main(String[] args) {
