@@ -229,6 +229,10 @@ public class Test {
     }
 
     public static void testSpilt2() {
+        int i = 3;
+        int j = 5;
+        double d =  (double) i/j;
+        System.out.println(d);
         String s = "天气真好|||是的|呢";
         String[] arr = StringUtils.split(s, "|||");
         System.out.println(arr.length);
