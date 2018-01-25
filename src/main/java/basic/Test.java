@@ -254,8 +254,20 @@ public class Test {
         System.out.println(ls.subList(0,max));
     }
 
+    public static void testReplaceall() {
+        String s = "showtypevalue";
+        String query = "";
+        String rep = query.replaceAll("\\s{1,}", ",")
+            .replaceAll("\\,{1,}", ",")
+            .replaceAll("\\?{1,}", "?")
+            .replaceAll("[，。；：“”？【】（）]‘’", ",")
+            .replaceAll(".*[么么哒|谢谢].*", "")
+            .replaceAll(".*[img|qqcom|http].*", "");
+        System.out.println(rep);
+    }
+
     public static void main(String[] args) {
         //testgetVerionByPath();
-        testSpilt2();
+        testReplaceall();
     }
 }
