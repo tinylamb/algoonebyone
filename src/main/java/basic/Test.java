@@ -266,8 +266,15 @@ public class Test {
         System.out.println(rep);
     }
 
+    public static void testRepall() {
+        String s = "你好\n哦'的#看;天\\拿";
+        String rep = s.replaceAll("\\\\|\r|\n|\'|#|;", "");
+        System.out.println(s);
+        System.out.println(rep);
+    }
+
     public static void main(String[] args) {
         //testgetVerionByPath();
-        testReplaceall();
+        testRepall();
     }
 }
