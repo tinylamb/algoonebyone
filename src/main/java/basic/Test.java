@@ -267,14 +267,39 @@ public class Test {
     }
 
     public static void testRepall() {
+        String s1 = "2         ";
+        String srep = s1.replaceAll("\\s+", "");
         String s = "你好\n哦'的#看;天\\拿";
         String rep = s.replaceAll("\\\\|\r|\n|\'|#|;", "");
         System.out.println(s);
+        System.out.println(rep);
+        System.out.println(srep);
+    }
+
+    public static void testPattern() {
+        final String pattern = ".+:[-]?\\d+:[\\d,]+:\\d+:[\\d,]+";
+        String str = "双11活动:0:0,12:0:0,2";
+        if (str.matches(pattern)) {
+            System.out.println(str);
+        }
+    }
+
+    public static void testRep() {
+        //http://blog.csdn.net/u012307002/article/details/51298809
+        String str = "<div id=\"se-knowledge\"><link href=\"//g.alicdn.com/crm/kbskin/css/plugins/ckeditor/pc.css\" "
+            + "rel=\"stylesheet\"> <p><span>Fliggy帮您查找了一下相关内容哦，您可以点击以下内容查看~~</span></p><ul>  <li><a "
+            + "href=\"//ihelp.taobao.com/pocket/solution.htm?from=searchDefault&ampkid=20506770&amppsc=5\" "
+            + "target=\"_blank\">预约购票什么时候有结果？</a></li>  <li><a "
+            + "href=\"//ihelp.taobao.com/pocket/solution.htm?from=searchDefault&ampkid=13442859&amppsc=5\" "
+            + "target=\"_blank\">如何查看预约购票是否成功？</a></li>  <li><a href=\"https://ihelp.taobao.com/pocket/solution"
+            + ".htm?fromApp=poc,NAFEEDBACK)";
+        String rep = str.replaceAll("[\\w\\pP\\pS]", "")
+            .replaceAll("\\s+", " ").trim();
         System.out.println(rep);
     }
 
     public static void main(String[] args) {
         //testgetVerionByPath();
-        testRepall();
+        testRep();
     }
 }
