@@ -4,6 +4,7 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.HashSet;
 import java.util.Iterator;
@@ -286,20 +287,67 @@ public class Test {
 
     public static void testRep() {
         //http://blog.csdn.net/u012307002/article/details/51298809
-        String str = "<div id=\"se-knowledge\"><link href=\"//g.alicdn.com/crm/kbskin/css/plugins/ckeditor/pc.css\" "
-            + "rel=\"stylesheet\"> <p><span>Fliggy帮您查找了一下相关内容哦，您可以点击以下内容查看~~</span></p><ul>  <li><a "
-            + "href=\"//ihelp.taobao.com/pocket/solution.htm?from=searchDefault&ampkid=20506770&amppsc=5\" "
-            + "target=\"_blank\">预约购票什么时候有结果？</a></li>  <li><a "
-            + "href=\"//ihelp.taobao.com/pocket/solution.htm?from=searchDefault&ampkid=13442859&amppsc=5\" "
-            + "target=\"_blank\">如何查看预约购票是否成功？</a></li>  <li><a href=\"https://ihelp.taobao.com/pocket/solution"
-            + ".htm?fromApp=poc,NAFEEDBACK)";
+        String str = "";
         String rep = str.replaceAll("[\\w\\pP\\pS]", "")
             .replaceAll("\\s+", " ").trim();
         System.out.println(rep);
     }
 
+    public static void testCal() {
+        String date = "2018-02-06 20:56:34";
+        int days = -365;
+        SimpleDateFormat dfs = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        Date t = null;
+        try {
+            t = dfs.parse(date);
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        Calendar calendar = Calendar.getInstance();
+        calendar.setTime(t);
+        calendar.add(Calendar.DAY_OF_MONTH, days);
+        Date time = calendar.getTime();
+        System.out.println(dfs.format(time));
+    }
+
+    public static String getNumberid(String query) {
+        if (StringUtils.isEmpty(query)) {
+            return "";
+        }
+        char[] c = query.toCharArray();
+        int len = 0;
+        boolean start = false;
+        boolean end = false;
+        for (int i = 0; i < c.length; i++) {
+            if (start && end) {
+                break;
+            }
+            if (c[i] >= 48 && c[i] <= 57) {
+                c[len++] = c[i];
+                start = true;
+            } else {
+                if (start) {
+                    end = true;
+                }
+            }
+        }
+        char[] result = new char[len];
+        System.arraycopy(c, 0, result, 0, len);
+        if (result.length == 17 || result.length == 18) {
+            return new String(result);
+        } else {
+            return "";
+        }
+    }
+
+    public static void testgetNumberid() {
+        String query = "";
+        String id = getNumberid(query);
+        System.out.println(id);
+    }
+
     public static void main(String[] args) {
         //testgetVerionByPath();
-        testRep();
+        testgetNumberid();
     }
 }
