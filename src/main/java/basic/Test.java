@@ -5,6 +5,7 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Calendar;
+import java.util.Collection;
 import java.util.Date;
 import java.util.HashSet;
 import java.util.Iterator;
@@ -346,8 +347,31 @@ public class Test {
         System.out.println(id);
     }
 
+    private static boolean anycontains(Collection<String> ls, String w) {
+        for (String tmp : ls) {
+            if (w.contains(tmp.trim())) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public static void testanycontains() {
+        List<String> l = Arrays.asList("a", "b");
+        Set<String> s = new HashSet<String>(l);
+        //String[] arr = new String[] {"a", "b"};
+        if (anycontains(s, "b")) {
+            System.out.println("anycontains");
+        }
+
+    }
+
+    public static boolean allContains(String key, Collection<String> col) {
+        return true;
+    }
+
     public static void main(String[] args) {
         //testgetVerionByPath();
-        testgetNumberid();
+        testanycontains();
     }
 }
