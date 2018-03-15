@@ -370,8 +370,32 @@ public class Test {
         return true;
     }
 
+    public static void combinations(String[] arr, int len, int startPosition, String[] result, final List<String[]> comb){
+        if (len == 0){
+            comb.add(result.clone());
+            return;
+        }
+        for (int i = startPosition; i <= arr.length-len; i++){
+            result[result.length - len] = arr[i];
+            combinations(arr, len-1, i+1, result, comb);
+        }
+    }
+
+    public static void testcombinations() {
+        String[] arr = {"A","B","C","D","E","F"};
+        final List<String[]> group = new ArrayList<String[]>();
+        final int k = 2;
+        for (int i = 0; i < arr.length; i++) {
+            String[] tmp = new String[i + 1];
+            combinations(arr, i + 1,0, tmp, group);
+        }
+        for (String[] var : group) {
+            printArr(var);
+        }
+    }
+
     public static void main(String[] args) {
         //testgetVerionByPath();
-        testanycontains();
+        testcombinations();
     }
 }
