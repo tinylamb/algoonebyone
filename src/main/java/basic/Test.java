@@ -394,8 +394,14 @@ public class Test {
         }
     }
 
+    public static void testadd() {
+        System.out.println(2 + 2 + " : one");
+        System.out.println("one : " + 2 + 2);
+        System.out.println("one : " + 2 * 2);
+    }
+
     public static void main(String[] args) {
         //testgetVerionByPath();
-        testcombinations();
+        testadd();
     }
 }
