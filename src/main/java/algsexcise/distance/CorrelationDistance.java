@@ -4,6 +4,7 @@ package algsexcise.distance;
  * Created by samo on 2018/3/21.
  * Correlation distance is defined as 1 - correlation coefficient.
  * 相关系数距离应用到什么场景呢?
+ * https://www.zhihu.com/question/20852004/answer/134902061
  * @author samo
  * @date 2018/03/21
  */
