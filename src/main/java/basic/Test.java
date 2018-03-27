@@ -7,9 +7,11 @@ import java.util.Arrays;
 import java.util.Calendar;
 import java.util.Collection;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Map.Entry;
 import java.util.Set;
 import java.util.regex.Pattern;
 
@@ -478,8 +480,39 @@ public class Test {
 
     }
 
+    public static void testSum() {
+        List<String> time = Arrays.asList("20180310", "20180309");
+        List<Double> fenzi = Arrays.asList(2.0d, 14.0d);
+        List<Double> fenmu = Arrays.asList(4.0d, 604.0d);
+
+        HashMap<String, Double[]> sum = new HashMap<>();
+        String key;
+        for (int i = 0; i < time.size(); i++) {
+            key = time.get(i);
+            System.out.println(i + ":" + key);
+            if (!sum.containsKey(key)) {
+                Double[] total = {0d, 0d};
+                sum.put(key, total);
+            }
+            if (!fenzi.isEmpty()) {
+                sum.get(key)[0] = sum.get(key)[0] + fenzi.get(i);
+            }
+            if (!fenmu.isEmpty()) {
+                sum.get(key)[1] = sum.get(key)[1] + fenmu.get(i);
+            }
+            //for (Entry<String, Double[]> tmp : sum.entrySet()) {
+            //    System.out.println(tmp.getKey());
+            //    printArr(tmp.getValue());
+            //}
+        }
+        for (Entry<String, Double[]> tmp : sum.entrySet()) {
+            System.out.println(tmp.getKey());
+            printArr(tmp.getValue());
+        }
+    }
+
     public static void main(String[] args) {
         //testgetVerionByPath();
-        testfastSplit();
+        testSum();
     }
 }
