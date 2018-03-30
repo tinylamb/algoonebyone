@@ -511,8 +511,19 @@ public class Test {
         }
     }
 
+    public static void testSetremove() {
+        List<String> time = Arrays.asList("20180310", "20180309");
+        List<String> time1 = new ArrayList<>(time);
+        Set<String> set = new HashSet<>(time);
+        set.add("20180311");
+        set.removeAll(time);
+        System.out.println(set);
+        time1.remove(time1.size() - 1);
+        System.out.println(time1);
+    }
+
     public static void main(String[] args) {
         //testgetVerionByPath();
-        testSum();
+        testSetremove();
     }
 }
