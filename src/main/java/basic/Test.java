@@ -2,6 +2,7 @@ package basic;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.AbstractMap;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Calendar;
@@ -11,6 +12,7 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Set;
 import java.util.regex.Pattern;
@@ -520,6 +522,12 @@ public class Test {
         System.out.println(set);
         time1.remove(time1.size() - 1);
         System.out.println(time1);
+    }
+
+    public static void testTuple() {
+        Map.Entry<String, String> entry1 =
+            new AbstractMap.SimpleEntry<String, String>("name", "feinen");
+
     }
 
     public static void main(String[] args) {
