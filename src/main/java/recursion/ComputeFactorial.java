@@ -8,7 +8,7 @@ import java.util.Scanner;
  * @author samo
  * @date 2018/04/03
  */
-public class ComputeFib {
+public class ComputeFactorial {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         while (true) {
