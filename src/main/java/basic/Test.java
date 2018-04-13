@@ -15,6 +15,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Set;
+import java.util.TreeSet;
 import java.util.regex.Pattern;
 
 import org.apache.commons.lang3.StringUtils;
@@ -530,8 +531,16 @@ public class Test {
 
     }
 
+    public static void testTreeSet() {
+        List<String> time = Arrays.asList("20180310", "20180309", "20180310", "20180309");
+        Set<String> timeset = new TreeSet<>(time);
+        System.out.println(timeset);
+        List<String> sorted = new ArrayList<>(timeset);
+        System.out.println(sorted);
+    }
+
     public static void main(String[] args) {
         //testgetVerionByPath();
-        testSetremove();
+        testTreeSet();
     }
 }
