@@ -13,6 +13,7 @@ public class HelloWorld {
     }
 
     public static void main(String[] args) {
+        HelloWorld hw = new HelloWorld();
         System.out.println("Hello, World");
         /**
          * javac HelloWorld.java   生成   HelloWorld.class
