@@ -31,10 +31,23 @@ public class HelloWorld {
         }
         HelloWorld hw = new HelloWorld();
         System.out.println("Hello, World");
+        kdw();
         /**
          * javac HelloWorld.java   生成   HelloWorld.class
          * javap -c HelloWorld.class
          * cd ..;java introcs.HelloWorld
          */
+    }
+
+    public static void kdw() {
+        System.out.println("**        ***    **********      **             *             **");
+        System.out.println("**      ***      **        **     **           ***           ** ");
+        System.out.println("**    ***        **         **     **         ** **         **  ");
+        System.out.println("**  ***          **          **     **       **   **       **   ");
+        System.out.println("*****            **          **      **     **     **     **    ");
+        System.out.println("**  ***          **          **       **   **       **   **     ");
+        System.out.println("**    ***        **         **         ** **         ** **      ");
+        System.out.println("**      ***      **        **           ***           ***       ");
+        System.out.println("**        ***    **********              *             *        ");
     }
 }
