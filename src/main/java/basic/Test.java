@@ -539,8 +539,28 @@ public class Test {
         System.out.println(sorted);
     }
 
+    public static void testClearList() {
+        List<String> ls = new ArrayList<>(10);
+        ls.add("1");
+        ls.add("2");
+        for (String tmp : ls) {
+            System.out.println(tmp);
+        }
+        System.out.println(ls.size());
+        ls.clear();
+        ls.add("A");
+        for (String tmp : ls) {
+            System.out.println(tmp);
+        }
+        System.out.println(ls.size());
+        String s1 = "s1";
+        String s2 = s1.concat("s2");
+        // string add / string concat
+        //http://web001.iteye.com/blog/1757337
+    }
+
     public static void main(String[] args) {
         //testgetVerionByPath();
-        testTreeSet();
+        testClearList();
     }
 }

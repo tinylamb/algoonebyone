@@ -50,4 +50,7 @@ public class HelloWorld {
         System.out.println("**      ***      **        **           ***           ***       ");
         System.out.println("**        ***    **********              *             *        ");
     }
+    public static void main() {
+        System.out.println("Doesn't execute");
+    }
 }
