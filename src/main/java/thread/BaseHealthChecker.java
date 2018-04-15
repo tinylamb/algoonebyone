@@ -27,6 +27,7 @@ public abstract class BaseHealthChecker implements Runnable {
     @Override
     public void run() {
         try {
+            // 理解这里很重要
             verifyService();
             _serviceUp = true;
         } catch (Throwable t) {
