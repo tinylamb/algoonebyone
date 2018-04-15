@@ -17,7 +17,9 @@ import java.util.concurrent.atomic.AtomicInteger;
  */
 public class Findmax {
     public static void main(String[] args) {
-        testInteger();
+        for (int i = 0; i < 10; i++) {
+            testAtomicInteger();
+        }
     }
 
     public static void testInteger() {
@@ -125,6 +127,11 @@ public class Findmax {
                 max.put("max", random);
             }
             if (random > integer.intValue()) {
+                try {
+                    Thread.sleep(100);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
                 integer.set(random);
             }
             synchronized (val) {
