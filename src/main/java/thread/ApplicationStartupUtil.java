@@ -3,7 +3,7 @@ package thread;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.CountDownLatch;
-import java.util.concurrent.Executor;
+import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 /**
@@ -20,9 +20,9 @@ public class ApplicationStartupUtil {
         _services.add(new NetworkHealthChecker(_latch));
         _services.add(new CacheHealthChecker(_latch));
 
-        Executor executor = Executors.newFixedThreadPool(_services.size());
+        ExecutorService executor = Executors.newFixedThreadPool(_services.size());
         for (final BaseHealthChecker v : _services) {
-            executor.execute(v);
+            executor.submit(v);
         }
         try {
             _latch.await();
