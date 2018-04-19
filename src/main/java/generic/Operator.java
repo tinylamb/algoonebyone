@@ -8,4 +8,16 @@ package generic;
  */
 public interface Operator <T> {
     public String compute(T input);
+
+    //public static class OperatorCheck {
+    //    private List<String> check;
+    //
+    //    public List<String> getCheck() {
+    //        return check;
+    //    }
+    //
+    //    public void setCheck(List<String> check) {
+    //        this.check = check;
+    //    }
+    //}
 }

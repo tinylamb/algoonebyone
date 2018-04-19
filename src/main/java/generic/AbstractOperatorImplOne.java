@@ -15,4 +15,9 @@ public class AbstractOperatorImplOne extends AbstractOperator {
     public String join() {
         return getBasic() + "One";
     }
+
+    @Override
+    public boolean ICanOper(OperatorCheck data) {
+        return "one".equals(data.getType());
+    }
 }

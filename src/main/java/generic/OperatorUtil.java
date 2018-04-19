@@ -3,6 +3,8 @@ package generic;
 import java.util.HashMap;
 import java.util.Map;
 
+import generic.AbstractOperator.OperatorCheck;
+
 /**
  * Created by samo on 2018/3/13.
  *
@@ -36,5 +38,14 @@ public class OperatorUtil {
             String result = op.compute("input data");
             System.out.println(result);
         }
+
+        AbstractOperator.OperatorCheck check = new OperatorCheck();
+        check.setType("one");
+        AbstractOperatorImplOne one = new AbstractOperatorImplOne();
+        if (one.ICanOper(check)) {
+            System.out.println("i can oper");
+        }
+
+
     }
 }

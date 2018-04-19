@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
+import java.util.concurrent.Future;
 
 /**
  * Created by samo on 2018/4/15.
@@ -22,7 +23,7 @@ public class ApplicationStartupUtil {
 
         ExecutorService executor = Executors.newFixedThreadPool(_services.size());
         for (final BaseHealthChecker v : _services) {
-            executor.submit(v);
+            Future f = executor.submit(v);
         }
         try {
             _latch.await();

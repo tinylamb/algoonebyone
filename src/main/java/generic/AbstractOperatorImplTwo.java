@@ -15,4 +15,9 @@ public class AbstractOperatorImplTwo extends AbstractOperator {
     public String join() {
         return getBasic() + "TWO";
     }
+
+    @Override
+    public boolean ICanOper(OperatorCheck data) {
+        return "two".equals(data.getType());
+    }
 }
