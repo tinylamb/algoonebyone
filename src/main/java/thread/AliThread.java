@@ -37,15 +37,23 @@ public class AliThread {
             @Override
             public void run() {
                 System.out.println(Thread.currentThread().getName());
+                CommonService.clientReq();
             }
         });
         pool.submit(new Runnable() {
             @Override
             public void run() {
                 System.out.println(Thread.currentThread().getName());
+                CommonService.clientReq();
             }
         });
         pool.shutdown();//gracefully shutdown
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        System.out.println(CommonService.atomicInteger.get());
 
     }
 }

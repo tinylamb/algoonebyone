@@ -81,7 +81,6 @@ public class BlockingQueueModel implements Model {
             new Thread(model.newRunnableProducer()).start();
         }
 
-
     }
 
 
