@@ -14,7 +14,7 @@ import com.google.common.util.concurrent.ThreadFactoryBuilder;
  * @author samo
  * @date 2018/04/17
  */
-public class AliThread {
+public class ThreadRule {
     /**
      * 深度解读 java 线程池设计思想及源码实现
      * https://javadoop.com/post/java-thread-pool
