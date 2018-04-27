@@ -9,7 +9,7 @@ package effective.builderpattern;
 public class TestNutritionFacts {
     public static void main(String[] args) {
         NutritionFacts cocaCola = new NutritionFacts
-            .NutritionFactsBuilder(240, 8)
+            .NutritionFactsBuilder(10, 8)
             .calories(100).calories(10).carbohydrate(50).build();
     }
 }

@@ -10,13 +10,13 @@ import lombok.Data;
  */
 @Data
 public class NutritionFacts {
-    //final should be initialized?
-    private int servingSize;
-    private int servings;
-    private int calories;
-    private int fat;
-    private int sodium;
-    private int carbohydrate;
+    //final should be initialized? of course!
+    private final int servingSize;
+    private final int servings;
+    private final int calories;
+    private final int fat;
+    private final int sodium;
+    private final int carbohydrate;
 
     private NutritionFacts(NutritionFactsBuilder builder) {
         servingSize = builder.servingSize;
@@ -39,12 +39,18 @@ public class NutritionFacts {
         private int sodium = 0;
 
         public NutritionFactsBuilder(int servingSize, int servings) {
+            if (servingSize < 0) {
+                throw new IllegalArgumentException();
+            }
             this.servingSize = servingSize;
             this.servings = servings;
         }
 
         public NutritionFactsBuilder calories(int val) {
             this.calories = val;
+            if (val < 0) {
+                throw new IllegalArgumentException();
+            }
             return this;
         }
 
