@@ -1,4 +1,4 @@
-package learnclass.clone;
+package effective.objecttips.clone;
 
 import java.util.Vector;
 

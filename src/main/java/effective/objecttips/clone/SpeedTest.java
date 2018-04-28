@@ -1,4 +1,4 @@
-package learnclass.clone;
+package effective.objecttips.clone;
 
 /**
  * Created by samo on 2018/4/26.
