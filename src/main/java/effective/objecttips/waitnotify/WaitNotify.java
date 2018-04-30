@@ -16,9 +16,17 @@ public class WaitNotify {
             @Override
             public void run() {
 
+                //--这里sleep会导致 wait后，没有nofity了
+                try {
+                    Thread.sleep(5000);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+                //--
                 synchronized (object) {
                     System.out.println("线程1 获取到监视器锁");
                     try {
+                        // 感觉wait要配置条件判断使用
                         object.wait();
                         System.out.println("线程1 恢复啦。我为什么这么久才恢复，因为notify方法虽然早就发生了，可是我还要获取锁才能继续执行。");
                     } catch (InterruptedException e) {
