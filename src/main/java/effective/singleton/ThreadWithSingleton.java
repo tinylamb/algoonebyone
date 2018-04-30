@@ -12,6 +12,7 @@ import java.util.List;
  */
 public class ThreadWithSingleton {
     public static void main(String[] args) {
+        //TODO 演示多线程对共享变量的读写
         Thread thread1 = new Thread(new Runnable() {
             @Override
             public void run() {
