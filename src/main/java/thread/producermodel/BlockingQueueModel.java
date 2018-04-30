@@ -9,7 +9,10 @@ import java.util.concurrent.atomic.AtomicInteger;
  *
  * @author samo
  * @date 2018/04/19
+ * BlockingQueue的写法最简单。
+ * 核心思想是，把并发和容量控制封装在缓冲区中。而BlockingQueue的性质天生满足这个要求。
  */
+
 public class BlockingQueueModel implements Model {
     //消费bq
     private final BlockingQueue<Task> queue;
@@ -47,7 +50,7 @@ public class BlockingQueueModel implements Model {
 
         @Override
         public void run() {
-            while (increTaskNo.get() < 1) {
+            while (increTaskNo.get() < 1) {//控制生产总数,源码是没有这里
                 try {
                     Thread.sleep(1000);
                 } catch (InterruptedException e) {

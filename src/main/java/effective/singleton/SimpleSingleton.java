@@ -28,9 +28,8 @@ public class SimpleSingleton implements Serializable {
     }
 
     public void process(List<String> ls) {
-        System.out.println("ls hash " + ls.hashCode());
         for (String tmp : ls) {
-            System.out.println(tmp);
+            System.out.println("add " + tmp);
             store.add(tmp);
         }
     }

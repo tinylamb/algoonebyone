@@ -42,30 +42,16 @@ public class ThreadWithSingleton {
             }
         }, "t2");
 
-        Thread thread3 = new Thread(new Runnable() {
-            @Override
-            public void run() {
-                try {
-                    Thread.sleep(1000);
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
-                SimpleSingleton singleton = SimpleSingleton.getInstance();
-                while (singleton.getStore().size() < 100) {
-                    singleton.readStore();
-                }
-            }
-        }, "t3");
+
         thread1.start();
         thread2.start();
-        thread3.start();
         try {
             Thread.sleep(3000);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
         SimpleSingleton singleton = SimpleSingleton.getInstance();
-        System.out.println(singleton.getStore());
+        System.out.println("result " + singleton.getStore());
 
     }
 }
