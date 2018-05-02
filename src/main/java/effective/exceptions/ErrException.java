@@ -6,7 +6,8 @@ package effective.exceptions;
  * @author samo
  * @date 2018/05/02
  */
-public class ErrException extends Exception {
+//注意RuntimeException 与 Exception的区别
+public class ErrException extends RuntimeException {
     private int errorCode;
     private String errorMsg;
 

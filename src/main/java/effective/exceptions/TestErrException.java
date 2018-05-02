@@ -7,16 +7,18 @@ package effective.exceptions;
  * @date 2018/05/02
  */
 public class TestErrException {
-    public static void throwE() throws ErrException {
+    //throws ErrException
+    public static void throwE()  {
         throw new ErrException(ErrCode.MISSING_HEADER);
     }
 
-    public static void main(String[] args ) {
-        try {
-            throwE();
-        } catch (ErrException e) {
-            e.printStackTrace();
-            System.out.println(e.getErrorMsg());
-        }
+    public static void main(String[] args) {
+        throwE();
+        //try {
+        //    throwE();
+        //} catch (ErrException e) {
+        //    e.printStackTrace();
+        //    System.out.println(e.getErrorMsg());
+        //}
     }
 }
