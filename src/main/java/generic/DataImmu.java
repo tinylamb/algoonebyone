@@ -1,6 +1,8 @@
 package generic;
 
 import java.sql.Timestamp;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by samo on 2017/6/29.
@@ -65,5 +67,9 @@ public class DataImmu <E> {
         this.x = x;
         this.y = y;
         this.weight = weight;
+    }
+
+    public static void main(String[] args) {
+        List<String> ls = new ArrayList<String>();
     }
 }

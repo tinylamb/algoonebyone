@@ -559,6 +559,13 @@ public class Test {
         //http://web001.iteye.com/blog/1757337
     }
 
+    public static void testPrimitiveGeneric() {
+        int[] ints = new int[] {1, 2, 3};
+        //不能使用8个基本类型实例化类型参数
+        //原因在于类型擦除，Object不能存储基本类型：
+        //printArr(ints);
+    }
+
     public static void main(String[] args) {
         //testgetVerionByPath();
         testClearList();
