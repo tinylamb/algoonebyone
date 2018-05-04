@@ -566,8 +566,18 @@ public class Test {
         //printArr(ints);
     }
 
+    public static String testFinally() {
+        //先执行finally,再return
+        try {
+            return "hello world";
+        } finally {
+            System.out.println("finally");
+        }
+    }
+
     public static void main(String[] args) {
         //testgetVerionByPath();
-        testClearList();
+        String s = testFinally();
+        System.out.println(s);
     }
 }
